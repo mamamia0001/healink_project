@@ -26,7 +26,6 @@ export class Login {
   login() {
     if (this.email && this.password) {
       alert(`Email: ${this.email}\nPassword: ${this.password}\nRemember me: ${this.rememberMe}`);
-      // Di sini kamu bisa tambahkan logika autentikasi jika backend sudah ada
     } else {
       alert('Please enter both email and password.');
     }

@@ -79,7 +79,7 @@ input[type="password"] {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  width: 200%; /* Sesuaikan dengan lebar input kamu */
+  width: 200%; 
 }
 
 .options label {
