@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: 'poppins';
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.page-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f2f5f9;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #0B2656;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: auto;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.logout {
+  margin-top: auto;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.main-content {
+  flex-grow: 1;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.greeting h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.greeting p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px; 
+  color: var(--text-secondary);
+}
+
+.status {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.status strong {
+  color: var(--text-dark);
+}
+
+.content-body {
+  flex-grow: 1;
+  background-color: #f2f5f9;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-state {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+}
+
+.empty-state-img {
+  width: 330px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.oops-text {
+  font-size: 20px;
+  color: var(--accent-red);
+  margin: 0;
+  font-weight: 700;
+}
+
+.empty-state-message {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.empty-state-submessage {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.create-appointment-btn {
+  background-color: #0B2656;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.appointment-list {
+  width: 100%;
+  text-align: left;
+}

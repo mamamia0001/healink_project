@@ -1,0 +1,45 @@
+<div class="page-container">
+   <aside class="sidebar">
+     <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <nav>
+      <ul>
+        <li>Dashboard</li>
+        <li>Appointment</li>
+        <br>
+        <li>Settings</li>
+        <li>Help & Support</li>
+      </ul>
+    </nav>
+    <button class="logout">Log Out</button>
+  </aside>
+
+
+  <main class="main-content">
+    <header class="main-header">
+      <div class="greeting">
+        <h2>Hello, {{ userName }}</h2>
+        <br>
+        <p>welcome to HEALINK's Appointment page!</p>
+      </div>
+    </header>
+
+    <div class="content-body">
+      <div *ngIf="!hasAppointment" class="empty-state">
+        <img src="assets/oops.png" alt="No Appointment Illustration" class="empty-state-img">
+        <h3 class="oops-text">Oops</h3>
+        <p class="empty-state-message">seems like you had no appointment yet</p>
+        <p class="empty-state-submessage">Click the button bellow to make one!</p>
+        <button class="create-appointment-btn" (click)="createAppointment()">
+           Create Appointment
+        </button>
+      </div>
+
+
+      <div *ngIf="hasAppointment" class="appointment-list">
+        <h2>Your Appointments</h2>
+        <p>Daftar janji temu akan muncul di sini.</p>
+      </div>
+    </div>
+
+  </main>
+</div>
