@@ -1,11 +1,11 @@
 <div class="page-container">
-   <aside class="sidebar">
-     <img src="assets/healink_logo2.png" alt="Healink Logo" />
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
     <nav>
       <ul>
         <li>Dashboard</li>
         <li>Appointment</li>
-        <br>
+        <br />
         <li>Settings</li>
         <li>Help & Support</li>
       </ul>
@@ -13,33 +13,57 @@
     <button class="logout">Log Out</button>
   </aside>
 
-
   <main class="main-content">
-    <header class="main-header">
-      <div class="greeting">
-        <h2>Hello, {{ userName }}</h2>
-        <br>
-        <p>welcome to HEALINK's Appointment page!</p>
-      </div>
-    </header>
 
     <div class="content-body">
       <div *ngIf="!hasAppointment" class="empty-state">
-        <img src="assets/oops.png" alt="No Appointment Illustration" class="empty-state-img">
+        <img src="assets/oops.png" alt="No Appointment Illustration" class="empty-state-img" />
         <h3 class="oops-text">Oops</h3>
-        <p class="empty-state-message">seems like you had no appointment yet</p>
-        <p class="empty-state-submessage">Click the button bellow to make one!</p>
-        <button class="create-appointment-btn" (click)="createAppointment()">
-           Create Appointment
-        </button>
+        <p class="empty-state-message">Seems like you have no appointment yet</p>
+        <p class="empty-state-submessage">Click the button below to make one!</p>
+        <button class="create-appointment-btn" (click)="showModal = true">Create Appointment</button>
       </div>
-
 
       <div *ngIf="hasAppointment" class="appointment-list">
         <h2>Your Appointments</h2>
-        <p>Daftar janji temu akan muncul di sini.</p>
+        <ul>
+          <li *ngFor="let appointment of appointments">
+            <strong>{{ appointment.division }}</strong> with {{ appointment.doctor }} on {{ appointment.date }}
+          </li>
+        </ul>
+        <button class="create-appointment-btn" (click)="showModal = true">+ Add Another Appointment</button>
       </div>
     </div>
-
   </main>
+</div>
+
+<div class="modal-overlay" [class.show]="showModal">
+  <div class="modal">
+    <div class="modal-header">
+      <span>APPOINTMENT FORM</span>
+      <button class="close-btn" (click)="showModal = false">×</button>
+    </div>
+    <div class="modal-body">
+      <label>Clinic Division</label>
+      <select [(ngModel)]="selectedDivision">
+        <option disabled selected value="">Select the Hospital Division based on your disease</option>
+        <option>Cardiology</option>
+        <option>Neurology</option>
+        <option>Dermatology</option>
+      </select>
+
+      <label>Doctor</label>
+      <select [(ngModel)]="selectedDoctor">
+        <option disabled selected value="">Select the Doctor</option>
+        <option>Dr. Smith</option>
+        <option>Dr. Jane</option>
+        <option>Dr. Albert</option>
+      </select>
+
+      <label>Appointment Date</label>
+      <input type="date" [(ngModel)]="appointmentDate" />
+
+      <button class="submit-btn" (click)="submitAppointment()">Submit</button>
+    </div>
+  </div>
 </div>
