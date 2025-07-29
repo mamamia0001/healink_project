@@ -32,7 +32,10 @@
 .sidebar ul li {
   margin: 20px 0;
   cursor: pointer;
- 
+}
+
+.sidebar ul li:hover {
+  background-color: #16366f;
 }
 
 .logout {
@@ -43,6 +46,7 @@
   padding: 10px;
   cursor: pointer;
 }
+
 
 .main {
   flex: 1;
