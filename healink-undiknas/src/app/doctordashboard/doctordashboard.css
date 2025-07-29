@@ -1,23 +1,18 @@
-:root {
-  --primary-color: #0B2656;
-  --text-dark: #333;
-  --card-bg: #fff;
-  --light-bg: #f2f5f9;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
+* {
   margin: 0;
-  background-color: var(--light-bg);
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-.page-container {
+.container {
   display: flex;
   height: 100vh;
+  background-color: #f2f5f9;
 }
 
 .sidebar {
-  width: 220px;
+  width: 200px;
   background-color: #0B2656;
   color: #fff;
   padding: 20px;
@@ -37,7 +32,10 @@ body {
 .sidebar ul li {
   margin: 20px 0;
   cursor: pointer;
- 
+}
+
+.sidebar ul li:hover {
+  background-color: #16366f;
 }
 
 .logout {
@@ -49,7 +47,6 @@ body {
   cursor: pointer;
 }
 
-
 .main-content {
   flex: 1;
   padding: 20px;
@@ -58,103 +55,113 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
-.highlight {
-  color: var(--primary-color);
-  font-weight: bold;
-}
-
-.date-status {
-  text-align: right;
-}
-
-.search-bar {
-  margin: 20px 0;
+.header-info {
   display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.search-bar input {
+.search-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-section input {
   flex: 1;
-  padding: 10px;
+  padding: 8px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 6px;
 }
 
 .sort-btn {
-  padding: 10px 20px;
-  background-color: var(--primary-color);
+  background-color: #002B5B;
   color: white;
+  padding: 8px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .patient-table table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 30px;
-  background: white;
+  background-color: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .patient-table th,
 .patient-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #eee;
+  padding: 10px;
   text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
-.patient-table th {
-  background-color: #eaeef4;
+.patient-table a {
+  color: #0038FF;
+  text-decoration: none;
 }
 
-.patient-table td a {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-.info-cards {
+.right-panel {
+  width: 300px;
+  background: #f2f5f9;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  flex: 1;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  min-width: 160px;
+.btn {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+  box-shadow: 0px 3px 6px #ccc;
 }
 
-.statistics {
-  margin-top: 30px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.statistics .header {
+.summary-box {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  gap: 10px;
 }
 
-.yearly-btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  background-color: #ddd;
-  cursor: pointer;
+.summary-box div {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+  box-shadow: 0px 3px 6px #ccc;
 }
 
-.statistics img {
-  width: 100%;
-  margin-top: 15px;
+.stats {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px #ccc;
+}
+
+.stats .yearly {
+  float: right;
+  font-weight: normal;
+}
+
+.stats .graph {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  font-size: 12px;
 }

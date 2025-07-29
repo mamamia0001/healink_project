@@ -1,13 +1,11 @@
-<div class="page-container">
+<div class="container">
   <aside class="sidebar">
-    <div class="logo">
-      <img src="assets/healink_logo2.png" alt="HEALINK Logo">
-    </div>
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
     <nav>
       <ul>
-        <li class="active">Dashboard</li>
-        <li>Inpatient</li>
-        <br>
+        <li>Dashboard</li>
+        <li>Appointment</li>
+        <br />
         <li>Settings</li>
         <li>Help & Support</li>
       </ul>
@@ -19,20 +17,19 @@
     <header>
       <div>
         <h2>Welcome, Dr. Giovanni</h2>
-        <p>welcome back to <span class="highlight">HEALINK</span>'s system</p>
+        <p>welcome back to <strong>HEALINK</strong>’s system</p>
       </div>
-      <div class="date-status">
-        <p class="date">9 december 2025</p>
-        <div class="icons">
-          <i class="icon-chat"></i>
-          <i class="icon-bell"></i>
+      <div class="header-info">
+        <span class="date">9 december 2025</span>
+        <div class="status">
+          <i class="bell-icon">🔔</i>
+          <span class="status-text">STATUS:<br><strong>Doctor</strong></span>
         </div>
-        <p class="status">STATUS: <strong>Doctor</strong></p>
       </div>
     </header>
 
-    <section class="search-bar">
-      <input type="text" placeholder="Search...">
+    <section class="search-section">
+      <input type="text" placeholder="search..." />
       <button class="sort-btn">Sort by</button>
     </section>
 
@@ -49,45 +46,51 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>001</td>
-            <td>59</td>
-            <td>John Doe</td>
-            <td>Broken bone</td>
-            <td>083111222333</td>
-            <td><a href="#">see detail</a></td>
-          </tr>
-          <tr>
-            <td>002</td>
-            <td>59</td>
-            <td>Lorem</td>
-            <td>Ipsum</td>
-            <td>xxxxxxxxxxx</td>
-            <td><a href="#">see detail</a></td>
+          <tr *ngFor="let patient of patients">
+            <td>{{patient.id}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.diagnosis}}</td>
+            <td>{{patient.phone}}</td>
+            <td><a href="#">see details</a></td>
           </tr>
         </tbody>
       </table>
     </section>
+  </main>
 
-    <section class="info-cards">
-      <div class="card">MEDICINE SUPPLIES</div>
-      <div class="card">
+  <aside class="right-panel">
+    <button class="btn">💊 MEDICINE SUPPLIES</button>
+
+    <div class="summary-box">
+      <div>
         <p>TOTAL PATIENT</p>
         <h3>67</h3>
       </div>
-      <div class="card">
+      <div>
         <p>APPOINTMENT</p>
         <h3>7</h3>
       </div>
-      <div class="card">AVAILABLE FACILITY</div>
-    </section>
+    </div>
 
-    <section class="statistics">
-      <div class="header">
-        <p>Patient’s Statistic</p>
-        <button class="yearly-btn">Yearly</button>
+    <button class="btn">🏥 AVAILABLE FACILITY</button>
+
+    <div class="stats">
+      <h4>Patient’s Statistic <span class="yearly">• Yearly</span></h4>
+      <div class="graph">
+        <span>SEP</span>
+        <span>OKT</span>
+        <span>NOV</span>
+        <span>DEC</span>
       </div>
-      <img src="assets/statistic_placeholder.png" alt="Statistic Graph">
-    </section>
-  </main>
+      <svg height="80" width="200">
+        <polyline
+          fill="none"
+          stroke="#002B5B"
+          stroke-width="2"
+          points="0,60 50,40 100,50 150,20 200,30"
+        />
+      </svg>
+    </div>
+  </aside>
 </div>
