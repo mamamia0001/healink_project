@@ -30,21 +30,21 @@
       <table>
         <thead>
           <tr>
-            <th>PATIENT ID</th>
-            <th>AGE</th>
+            <th>ID</th>
             <th>NAME</th>
             <th>DIAGNOSE</th>
-            <th>PHONE</th>
+            <th>MEDICAL DETAIL</th>
             <th>PRESCRIPTION</th>
+            <th>CHECK-UPS</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let patient of patients">
             <td>{{patient.id}}</td>
-            <td>{{patient.age}}</td>
             <td>{{patient.name}}</td>
             <td>{{patient.diagnosis}}</td>
-            <td>{{patient.phone}}</td>
+            <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
+            <td><a href="#">see details</a></td>
             <td><a href="#">see details</a></td>
           </tr>
         </tbody>
@@ -57,30 +57,20 @@
       <span class="status-text">STATUS:<br><strong>Doctor</strong></span>
     </div>
 
-    <button class="btn">💊 MEDICINE SUPPLIES</button>
-
     <div class="summary-box">
-  <div class="summary-card">
-    <p>TOTAL PATIENT</p>
-    <div class="summary-content">
-      <div class="icon-circle">
-        <i class="fas fa-users"></i>
+      <div class="summary-card">
+        <p>TOTAL PATIENT</p>
+        <div class="summary-content">
+          <h3>67</h3>
+        </div>
       </div>
-      <h3>67</h3>
-    </div>
-  </div>
-  <div class="summary-card">
-    <p>APPOINTMENT</p>
-    <div class="summary-content">
-      <div class="icon-circle">
-        <i class="fas fa-users"></i>
+      <div class="summary-card">
+        <p>APPOINTMENT</p>
+        <div class="summary-content">
+          <h3>7</h3>
+        </div>
       </div>
-      <h3>7</h3>
     </div>
-  </div>
-</div>
-
-    <button class="btn">🏥 AVAILABLE FACILITY</button>
 
     <div class="stats">
       <h4>Patient’s Statistic <span class="yearly">• Yearly</span></h4>
@@ -100,4 +90,32 @@
       </svg>
     </div>
   </aside>
+</div>
+<div class="modal" *ngIf="selectedPatient">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>MEDICAL DETAIL</h3>
+      <span class="close" (click)="closeModal()">✕</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-column">
+        <strong>Past medical history:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.medicalHistory">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="modal-column">
+        <strong>Allergies:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.allergies">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="modal-column">
+        <strong>Surgeries:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.surgeries">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

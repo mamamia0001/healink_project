@@ -71,6 +71,7 @@ header {
   text-align: center;
   font-weight: bold;
 }
+
 .status-text {
   color: #002B5B;
 }
@@ -89,7 +90,7 @@ header {
 }
 
 .sort-btn {
-  background-color: #002B5B;
+  background-color: #0B2656;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -113,8 +114,9 @@ header {
 }
 
 .patient-table a {
-  color: #0038FF;
+  color: #0B2656;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .right-panel {
@@ -206,4 +208,74 @@ header {
   justify-content: space-around;
   margin: 10px 0;
   font-size: 12px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.modal-header {
+  background-color: #0B2656;
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.close {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-top: 1px solid #eee;
+  gap: 10px;
+}
+
+.modal-column {
+  flex: 1;
+  padding: 0 10px;
+  border-right: 1px solid #ccc;
+}
+
+.modal-column:last-child {
+  border-right: none;
+}
+
+.modal-column ul {
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.modal-column strong {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
