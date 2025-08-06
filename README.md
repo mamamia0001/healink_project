@@ -9,7 +9,7 @@ This repository contains the design prototype for a **Medical Record System Inte
 
 Click below to view the design:
 
-[![Figma](https://img.shields.io/badge/Open%20in-Figma-blue?logo=figma)](https://www.figma.com/proto/0osxQFCUq9c4BDjcmyuoX6/Healink-Undiknas?node-id=69-93&p=f&t=DUEGDfR8EGNaCnwK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=65%3A99)
+[![Figma](https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg)](https://www.figma.com/proto/0osxQFCUq9c4BDjcmyuoX6/Healink-Undiknas?node-id=69-93&p=f&t=DUEGDfR8EGNaCnwK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=65%3A99)
 
 ## ✨ Features Highlight
 - Modern UI components
