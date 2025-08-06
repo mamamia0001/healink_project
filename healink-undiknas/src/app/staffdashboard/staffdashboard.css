@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #EAEAEA;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #0B2656;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-bottom: auto;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: #16366f;
+}
+
+.logout {
+  margin-top: auto;
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.main {
+  flex: 1;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .welcome h2 span {
+  color: #1d4ed8;
+}
+
+.date-status {
+  text-align: right;
+}
+
+.date {
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  padding: 5px 15px;
+  margin-bottom: 5px;
+}
+
+.status {
+  font-weight: bold;
+  color: #1e293b;
+}
+
+.doctor-carousel {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.doctor-carousel h3 span {
+  color: #1d4ed8;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.doctor-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.doctor-img.center {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  border: 3px solid #1d4ed8;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.staff-shift{
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 100px;
+  height: 120px;
+  
+}
+.patient-form,
+.queue {
+  background-color: EAEAEA;
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1;
+}
+
+.staff-shift ul {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.patient-form .form-btn {
+  display: block;
+  background-color: #0B2656;
+  color: #f8fafc;
+  padding: 10px 15px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.queue {
+  display: flex;           
+  gap: 20px;               
+  justify-content: center; 
+  align-items: flex-start; 
+  background-color: #EAEAEA;
+  padding: 20px;
+  border-radius: 12px;
+  flex-wrap: nowrap;
+}
+
+.current-queue,
+.next-queue {
+  flex: 1;
+  max-width: 250px;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.current-queue {
+  background-color: white;
+  color: #0B2656;
+}
+
+.next-queue {
+  background-color: #0B2656;
+  color: white;
+}
+
+.number {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px 0;
+}
