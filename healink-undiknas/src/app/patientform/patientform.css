@@ -105,7 +105,8 @@
 
 .submit-button {
   margin-top: 20px;
-  padding: 12px;
+  padding: 12px 24px;
+  width: fit-content;
   border: none;
   border-radius: 6px;
   background-color: #0B2656;
@@ -113,6 +114,7 @@
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  align-self: center;
 }
 
 .submit-button:hover {
