@@ -1,16 +1,25 @@
 <div class="container">
   <aside class="sidebar">
     <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br/>
     <nav>
-      <ul>
-        <li>Dashboard</li>
-        <li>Appointment</li>
-        <br />
-        <li>Settings</li>
-        <li>Help & Support</li>
-      </ul>
-    </nav>
-    <button class="logout">Log Out</button>
+  <ul>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/appointment" routerLinkActive="active">Appointment</a>
+    </li>
+    <br />
+    <li>
+      <a routerLink="/settings" routerLinkActive="active">Settings</a>
+    </li>
+    <li>
+      <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+    </li>
+  </ul>
+</nav>
+    <button class="logout" routerLinkActive="active">Log Out</button>
   </aside>
 
   <main class="main-content">
@@ -45,7 +54,7 @@
             <td>{{patient.diagnosis}}</td>
             <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
             <td><a href="#">see details</a></td>
-            <td><a href="#">see details</a></td>
+            <td><a href="#">see more</a></td>
           </tr>
         </tbody>
       </table>
@@ -72,23 +81,32 @@
       </div>
     </div>
 
-    <div class="stats">
-      <h4>Patient’s Statistic <span class="yearly">• Yearly</span></h4>
-      <div class="graph">
-        <span>SEP</span>
-        <span>OKT</span>
-        <span>NOV</span>
-        <span>DEC</span>
-      </div>
-      <svg height="80" width="200">
-        <polyline
-          fill="none"
-          stroke="#002B5B"
-          stroke-width="2"
-          points="0,60 50,40 100,50 150,20 200,30"
-        />
-      </svg>
+  <div class="stats">
+  <h4>Patient’s Statistic Yearly</h4>
+  <div class="chart-wrapper">
+    <!-- Y-axis -->
+    <div class="y-axis-labels">
+      <span>100</span>
+      <span>75</span>
+      <span>50</span>
+      <span>25</span>
+      <span>0</span>
     </div>
+
+    <svg height="80" width="200">
+      <polyline
+        fill="none"
+        stroke="#002B5B"
+        stroke-width="2"
+        [attr.points]="getStatisticPolylinePoints()"
+      />
+    </svg>
+  </div>
+
+  <div class="graph">
+    <span *ngFor="let stat of statistics2025">{{ stat.month }}</span>
+  </div>
+</div>
   </aside>
 </div>
 <div class="modal" *ngIf="selectedPatient">

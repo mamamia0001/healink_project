@@ -8,13 +8,13 @@
 .container {
   display: flex;
   height: 100vh;
-  background-color: #f2f5f9;
+  background-color: #EAEAEA;
 }
 
 .sidebar {
   width: 200px;
   background-color: #0B2656;
-  color: #fff;
+  color: white;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -29,20 +29,24 @@
   margin-bottom: auto;
 }
 
-.sidebar ul li {
-  margin: 20px 0;
-  cursor: pointer;
+.sidebar ul li a {
+  display: block;
+  padding: 10px 15px;
+  color: #EAEAEA;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar ul li:hover {
+.sidebar ul li a:hover {
   background-color: #16366f;
 }
 
 .logout {
   margin-top: auto;
   background: none;
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid white;
+  color: white;
   padding: 10px;
   cursor: pointer;
 }
@@ -65,7 +69,7 @@ header {
 }
 
 .doctor-status {
-  background-color: #f2f5f9;
+  background-color: #EAEAEA;
   padding: 12px;
   margin-bottom: 10px;
   text-align: center;
@@ -73,7 +77,7 @@ header {
 }
 
 .status-text {
-  color: #002B5B;
+  color: #0B2656;
 }
 
 .search-section {
@@ -86,7 +90,7 @@ header {
   flex: 1;
   padding: 8px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #EAEAEA;
 }
 
 .sort-btn {
@@ -121,7 +125,7 @@ header {
 
 .right-panel {
   width: 300px;
-  background: #f2f5f9;
+  background: #EAEAEA;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -157,7 +161,7 @@ header {
 .summary-card p {
   font-weight: bold;
   font-size: 14px;
-  color: #0c2340;
+  color: #0B2656;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -169,45 +173,41 @@ header {
   gap: 10px;
 }
 
-.icon-circle {
-  width: 50px;
-  height: 50px;
-  background-color: #e5e8f0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.icon-circle i {
-  font-size: 20px;
-  color: #0c2340;
-}
-
 .summary-content h3 {
   font-size: 26px;
   font-weight: bold;
-  color: #0c2340;
+  color: #0B2656;
   margin: 0;
 }
 
 .stats {
-  background: white;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0px 3px 6px #ccc;
+  margin-top: 20px;
 }
 
-.stats .yearly {
-  float: right;
-  font-weight: normal;
+.stats .y-axis-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
+  position: absolute;
+  left: -40px;
+  font-size: 10px;
+  color: #555;
+}
+
+.stats .chart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 
 .stats .graph {
   display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-  font-size: 12px;
+  justify-content: space-between;
+  width: 200px;
+  margin-top: 5px;
+  font-size: 10px;
+  color: #333;
 }
 
 .modal {
@@ -224,7 +224,7 @@ header {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #EAEAEA;
   width: 600px;
   border-radius: 12px;
   overflow: hidden;
