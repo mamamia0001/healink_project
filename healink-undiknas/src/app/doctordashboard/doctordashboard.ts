@@ -12,30 +12,24 @@ import { RouterModule } from '@angular/router';
 export class Doctordashboard {
   patients: {
     id: string;
-    age: number;
     name: string;
     diagnosis: string;
-    phone: string;
     medicalHistory: string[];
     allergies: string[];
     surgeries: string[];
   }[] = [
     {
       id: '001',
-      age: 59,
       name: 'John Doe',
       diagnosis: 'Broken bone',
-      phone: '08311122333',
       medicalHistory: ['diabetes', 'hypertension', 'bipolar'],
       allergies: ['mushroom', 'lorem ipsum'],
       surgeries: ['appendectomy']
     },
     {
       id: '002',
-      age: 59,
       name: 'Lorem',
       diagnosis: 'Ipsum',
-      phone: 'xxxxxxxxxxx',
       medicalHistory: ['asthma'],
       allergies: ['dust'],
       surgeries: []
@@ -44,10 +38,8 @@ export class Doctordashboard {
 
   selectedPatient: {
     id: string;
-    age: number;
     name: string;
     diagnosis: string;
-    phone: string;
     medicalHistory: string[];
     allergies: string[];
     surgeries: string[];
