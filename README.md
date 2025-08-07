@@ -1,3 +1,4 @@
+# healink_project
 # 🎨 UI/UX Design - Medical Record System - Figma by Mahendra
 
 Hi there! 👋  
@@ -9,7 +10,7 @@ This repository contains the design prototype for a **Medical Record System Inte
 
 Click below to view the design:
 
-[![Figma](https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg)](https://www.figma.com/proto/0osxQFCUq9c4BDjcmyuoX6/Healink-Undiknas?node-id=69-93&p=f&t=DUEGDfR8EGNaCnwK-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=65%3A99)
+[![Figma](https://img.shields.io/badge/Figma-%23a259ff?logo=figma&logoColor=white)](https://www.figma.com/proto/0osxQFCUq9c4BDjcmyuoX6/Healink-Undiknas?node-id=65-99&p=f&t=1PAslgJoW7UUufF1-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=65%3A99&show-proto-sidebar=1)
 
 ## ✨ Features Highlight
 - Modern UI components
@@ -23,4 +24,3 @@ If you’d like to collaborate, give feedback, or request the design file, feel 
 ---
 
 Code: Ade Muliadi
-
