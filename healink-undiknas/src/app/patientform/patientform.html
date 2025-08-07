@@ -1,0 +1,55 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br/>
+    <nav>
+  <ul>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/appointment" routerLinkActive="active">Patient Form</a>
+    </li>
+    <br />
+    <li>
+      <a routerLink="/settings" routerLinkActive="active">Settings</a>
+    </li>
+    <li>
+      <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+    </li>
+  </ul>
+</nav>
+    <button class="logout" routerLinkActive="active">Log Out</button>
+  </aside>
+
+
+<div class="form-container">
+  <form class="patient-form">
+    <h2 class="form-title">PATIENT FORM</h2>
+
+    <input type="text" placeholder="ID" class="form-input" />
+
+    <select class="form-input">
+      <option>Registered Patient</option>
+      <option>New Patient</option>
+    </select>
+
+    <input type="text" placeholder="Diagnose" class="form-input" />
+
+    <h4 class="section-title">Medical Details</h4>
+    <input type="text" placeholder="Post medical History" class="form-input" />
+    <input type="text" placeholder="Allergies" class="form-input" />
+    <input type="text" placeholder="Surgeries" class="form-input" />
+
+    <h4 class="section-title">Prescriptions</h4>
+    <input type="text" placeholder="Disease" class="form-input" />
+    <textarea placeholder="Write the detail" class="form-input textarea"></textarea>
+    <input type="text" placeholder="Medicine" class="form-input" />
+    <textarea placeholder="Write a note for your patient to healed better" class="form-input textarea"></textarea>
+
+    <h4 class="section-title">Check-ups</h4>
+    <input type="date" class="form-input" />
+
+    <button type="submit" class="submit-button">SUBMIT</button>
+  </form>
+</div>

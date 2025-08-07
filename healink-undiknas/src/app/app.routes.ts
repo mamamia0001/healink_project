@@ -1,11 +1,10 @@
 import { RouterModule, Routes } from '@angular/router';
-import { Login } from './login/login';
 import { NgModule } from '@angular/core';
+import { Patientform } from './patientform/patientform';
 
 export const routes: Routes = [
-    { path: 'login', component: Login },
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
-    { path: '**', redirectTo: 'login' }
+    { path: '', redirectTo: 'patientform', pathMatch: 'full' },
+    { path: 'patientform', component: Patientform }
 ];
 
 @NgModule({
