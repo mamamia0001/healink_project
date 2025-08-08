@@ -8,7 +8,7 @@
       <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
     </li>
     <li>
-      <a routerLink="/appointment" routerLinkActive="active">Appointment</a>
+      <a routerLink="/appointment" routerLinkActive="active">Patient Form</a>
     </li>
     <br />
     <li>
@@ -53,7 +53,7 @@
             <td>{{patient.name}}</td>
             <td>{{patient.diagnosis}}</td>
             <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
-            <td><a href="#">see details</a></td>
+            <td><a href="" (click)="openPrescriptionModal(patient); $event.preventDefault()">see details</a></td>
             <td><a href="#">see more</a></td>
           </tr>
         </tbody>
@@ -84,7 +84,7 @@
   <div class="stats">
   <h4>Patient’s Statistic Yearly</h4>
   <div class="chart-wrapper">
-    <!-- Y-axis -->
+
     <div class="y-axis-labels">
       <span>100</span>
       <span>75</span>
@@ -129,10 +129,32 @@
         </ul>
       </div>
       <div class="modal-column">
-        <strong>Surgeries:</strong>
+        <strong>Treatment:</strong>
         <ul>
           <li *ngFor="let item of selectedPatient.surgeries">{{ item }}</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedPrescription">
+  <div class="modal-content vertical">
+    <div class="modal-header">
+      <h3>PRESCRIPTION DETAILS</h3>
+      <span class="close" (click)="closePrescriptionModal()">✕</span>
+    </div>
+    <div class="modal-body-vertical">
+      <div *ngFor="let med of selectedPrescription">
+        <p><strong>Medicine:</strong> {{ med.name }}</p>
+        <p><strong>Dosage:</strong> {{ med.dosage }}</p>
+        <p><strong>Instructions:</strong> {{ med.instructions }}</p>
+        <hr />
+      </div>
+
+      <div class="prescription-note">
+        <strong>Note:</strong>
+        <p>{{ selectedPrescriptionNote }}</p>
       </div>
     </div>
   </div>
