@@ -23,6 +23,8 @@ If you’d like to collaborate, give feedback, or request the design file, feel 
 
 ---
 
-Figma by Mahendra
-Coded by Ade Muliadi
-Backend: Benartdo
+- Figma by Mahendra
+- Coded by Ade Muliadi
+- Backend: Benartdo
+
+
