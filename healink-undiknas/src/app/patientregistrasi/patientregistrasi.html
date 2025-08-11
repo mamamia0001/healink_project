@@ -1,0 +1,47 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br/>
+    <nav>
+  <ul>
+    <li>
+      <a routerLink="/staffdashboard" routerLinkActive="active">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/patientregistrasi" routerLinkActive="active">Patient Form</a>
+    </li>
+    <br />
+    <li>
+      <a routerLink="/settings" routerLinkActive="active">Settings</a>
+    </li>
+    <li>
+      <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+    </li>
+  </ul>
+</nav>
+    <button class="logout" routerLinkActive="active">Log Out</button>
+  </aside>
+
+
+<div class="form-container">
+  <form class="register-form">
+    <h2 class="form-title">Registrasi Patient</h2>
+
+    <input type="text" placeholder="NIK" class="form-input" />
+
+    <input type="text" placeholder="Patient Name" class="form-input" />
+
+    <input type="text" placeholder="Symptom" class="form-input" />
+
+    <select class="form-input">
+      <option>Bone</option>
+      <option>Dental</option>
+      <option>Surgery</option>
+      <option>Neurology</option>
+      <option>Cardiology</option>
+      <option>Ophthalmology</option>
+    </select>
+
+    <button type="submit" class="submit-button">SUBMIT</button>
+  </form>
+</div>
