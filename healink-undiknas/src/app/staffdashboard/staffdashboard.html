@@ -1,72 +1,59 @@
 <div class="container">
   <aside class="sidebar">
-    <img src="assets/healink_logo2.png" alt="Healink Logo" class="logo" />
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
     <nav>
       <ul>
-        <li class="active">Dashboard</li>
-        <li>Facility</li>
-        <li>Settings</li>
-        <li>Help & Support</li>
+        <li>
+          <a routerLink="/staffdashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/patientregister" routerLinkActive="active">Patient Register</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
       </ul>
     </nav>
-    <button class="logout">Log Out</button>
+    <button class="logout" routerLinkActive="active">Log Out</button>
   </aside>
 
-  <main class="main">
-    <header class="header">
-      <div class="welcome">
-        <h2>Welcome, <span>Stella</span></h2>
-        <p>welcome back to <strong>HEALINK</strong>'s system</p>
+  <main class="main-content">
+    <header class="dashboard-header">
+      <div class="welcome-text">
+        <h2>Welcome, Stella</h2>
+        <p>welcome back to <strong>HEALINK</strong>’s system</p>
       </div>
-      <div class="date-status">
-        <div class="date">9 december 2025</div>
-        <div class="status">
-          <span class="bell-icon">🔔</span>
-          <span>Status: <strong>Staff</strong></span>
-        </div>
+      <div class="staff-status">
+        <span class="status-text">STATUS:<br><strong>Staff</strong></span>
       </div>
     </header>
 
-    <section class="doctor-carousel">
-      <h3>Available <span>Doctor</span></h3>
-      <div class="carousel">
-        <button class="nav-button">&#8249;</button>
-        <img src="assets/doc1.jpg" alt="Doctor 1" class="doctor-img" />
-        <img src="assets/doc2.jpg" alt="Doctor 2" class="doctor-img center" />
-        <img src="assets/doc3.jpg" alt="Doctor 3" class="doctor-img" />
-        <button class="nav-button">&#8250;</button>
-      </div>
-    </section>
+    <section class="patient-container">
 
-    <section class="bottom-section">
-      <div class="staff-shift">
-        <h4>Staff's Shift</h4>
-        <ul>
-          <li>Stella</li>
-          <li>Asep</li>
-          <li>Gilang</li>
-          <li>Noah</li>
-        </ul>
-      </div>
-
-      <div class="patient-form">
-        <h4>Patient <span>Form</span></h4>
-        <button class="form-btn">REGISTER NEW PATIENT</button>
-        <button class="form-btn">PATIENT FOLLOW-UP CHECK-UP</button>
-      </div>
-    
-      <div class="queue">
-        <div class="current-queue">
-          <h4>Patient Number</h4>
-          <p class="number">8</p>
-          <p>Division: Orthopedy</p>
-        </div>
-        <div class="next-queue">
-          <h4>Patient Number</h4>
-          <p class="number">9</p>
-          <p>Division: Orthopedy</p>
+      <div class="patient-section">
+        <h4>Patient today</h4>
+        <div class="patient-list">
+          <div class="patient-card" *ngFor="let patient of patients">
+            <p><strong>ID</strong> : {{ patient.id }}</p>
+            <p><strong>NAME</strong> : {{ patient.name }}</p>
+            <p><strong>AGE</strong> : {{ patient.age }}</p>
+            <p><strong>ADDRESS</strong> : {{ patient.address }}</p>
+            <p><strong>SYMPTOM</strong> : {{ patient.symptom }}</p>
+          </div>
         </div>
       </div>
+
+      <aside class="right-panel">
+        <div class="total-patient">
+          <p>Total Patient</p>
+          <div class="total-number">{{ patients.length }}</div>
+        </div>
+      </aside>
     </section>
   </main>
 </div>
