@@ -1,24 +1,24 @@
 <div class="container">
   <aside class="sidebar">
     <img src="assets/healink_logo2.png" alt="Healink Logo" />
-    <br/>
-    <nav>
-  <ul>
-    <li>
-      <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
-    </li>
-    <li>
-      <a routerLink="/appointment" routerLinkActive="active">Patient Form</a>
-    </li>
     <br />
-    <li>
-      <a routerLink="/settings" routerLinkActive="active">Settings</a>
-    </li>
-    <li>
-      <a routerLink="/help" routerLinkActive="active">Help & Support</a>
-    </li>
-  </ul>
-</nav>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/appointment" routerLinkActive="active">Patient Form</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
     <button class="logout" routerLinkActive="active">Log Out</button>
   </aside>
 
@@ -31,30 +31,40 @@
     </header>
 
     <section class="search-section">
-      <input type="text" placeholder="search..." />
-      <button class="sort-btn">Sort by</button>
+      <input 
+        type="text" 
+        placeholder="search..." 
+        [(ngModel)]="searchTerm"
+      />
+
+      <select [(ngModel)]="sortKey" (change)="setSort(sortKey)">
+        <option value="">Sort by</option>
+        <option value="id">ID</option>
+        <option value="name">Name</option>
+        <option value="diagnosis">Diagnosis</option>
+      </select>
     </section>
 
     <section class="patient-table">
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>NAME</th>
-            <th>DIAGNOSE</th>
+            <th (click)="setSort('id')">ID</th>
+            <th (click)="setSort('name')">NAME</th>
+            <th (click)="setSort('diagnosis')">DIAGNOSE</th>
             <th>MEDICAL DETAIL</th>
             <th>PRESCRIPTION</th>
             <th>CHECK-UPS</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let patient of patients">
+          <tr *ngFor="let patient of filteredPatients">
             <td>{{patient.id}}</td>
             <td>{{patient.name}}</td>
             <td>{{patient.diagnosis}}</td>
             <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
             <td><a href="" (click)="openPrescriptionModal(patient); $event.preventDefault()">see details</a></td>
-            <td><a href="#">see more</a></td>
+            <td><a href="" (click)="openCheckupsModal(patient); $event.preventDefault()">see more</a></td>
           </tr>
         </tbody>
       </table>
@@ -81,34 +91,34 @@
       </div>
     </div>
 
-  <div class="stats">
-  <h4>Patient’s Statistic Yearly</h4>
-  <div class="chart-wrapper">
+    <div class="stats">
+      <h4>Patient’s Statistic Yearly</h4>
+      <div class="chart-wrapper">
+        <div class="y-axis-labels">
+          <span>100</span>
+          <span>75</span>
+          <span>50</span>
+          <span>25</span>
+          <span>0</span>
+        </div>
 
-    <div class="y-axis-labels">
-      <span>100</span>
-      <span>75</span>
-      <span>50</span>
-      <span>25</span>
-      <span>0</span>
+        <svg height="80" width="200">
+          <polyline
+            fill="none"
+            stroke="#002B5B"
+            stroke-width="2"
+            [attr.points]="getStatisticPolylinePoints()"
+          />
+        </svg>
+      </div>
+
+      <div class="graph">
+        <span *ngFor="let stat of statistics2025">{{ stat.month }}</span>
+      </div>
     </div>
-
-    <svg height="80" width="200">
-      <polyline
-        fill="none"
-        stroke="#002B5B"
-        stroke-width="2"
-        [attr.points]="getStatisticPolylinePoints()"
-      />
-    </svg>
-  </div>
-
-  <div class="graph">
-    <span *ngFor="let stat of statistics2025">{{ stat.month }}</span>
-  </div>
-</div>
   </aside>
 </div>
+
 <div class="modal" *ngIf="selectedPatient">
   <div class="modal-content">
     <div class="modal-header">
@@ -156,6 +166,20 @@
         <strong>Note:</strong>
         <p>{{ selectedPrescriptionNote }}</p>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedCheckups">
+  <div class="modal-content vertical">
+    <div class="modal-header">
+      <h3>CHECK-UP HISTORY</h3>
+      <span class="close" (click)="closeCheckupsModal()">✕</span>
+    </div>
+    <div class="modal-body-vertical">
+      <ul>
+        <li *ngFor="let date of selectedCheckups">{{ date }}</li>
+      </ul>
     </div>
   </div>
 </div>
