@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-patientregistrasi',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './patientregistrasi.html',
   styleUrl: './patientregistrasi.css'
 })
