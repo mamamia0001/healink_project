@@ -1,0 +1,185 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/appointment" routerLinkActive="active">Patient Form</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLinkActive="active">Log Out</button>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <div>
+        <h2>Welcome, Dr. Giovanni</h2>
+        <p>welcome back to <strong>HEALINK</strong>’s system</p>
+      </div>
+    </header>
+
+    <section class="search-section">
+      <input 
+        type="text" 
+        placeholder="search..." 
+        [(ngModel)]="searchTerm"
+      />
+
+      <select [(ngModel)]="sortKey" (change)="setSort(sortKey)">
+        <option value="">Sort by</option>
+        <option value="id">ID</option>
+        <option value="name">Name</option>
+        <option value="diagnosis">Diagnosis</option>
+      </select>
+    </section>
+
+    <section class="patient-table">
+      <table>
+        <thead>
+          <tr>
+            <th (click)="setSort('id')">ID</th>
+            <th (click)="setSort('name')">NAME</th>
+            <th (click)="setSort('diagnosis')">DIAGNOSE</th>
+            <th>MEDICAL DETAIL</th>
+            <th>PRESCRIPTION</th>
+            <th>CHECK-UPS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of filteredPatients">
+            <td>{{patient.id}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.diagnosis}}</td>
+            <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
+            <td><a href="" (click)="openPrescriptionModal(patient); $event.preventDefault()">see details</a></td>
+            <td><a href="" (click)="openCheckupsModal(patient); $event.preventDefault()">see more</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <aside class="right-panel">
+    <div class="doctor-status">
+      <span class="status-text">STATUS:<br><strong>Doctor</strong></span>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-card">
+        <p>TOTAL PATIENT</p>
+        <div class="summary-content">
+          <h3>67</h3>
+        </div>
+      </div>
+      <div class="summary-card">
+        <p>APPOINTMENT</p>
+        <div class="summary-content">
+          <h3>7</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <h4>Patient’s Statistic Yearly</h4>
+      <div class="chart-wrapper">
+        <div class="y-axis-labels">
+          <span>100</span>
+          <span>75</span>
+          <span>50</span>
+          <span>25</span>
+          <span>0</span>
+        </div>
+
+        <svg height="80" width="200">
+          <polyline
+            fill="none"
+            stroke="#002B5B"
+            stroke-width="2"
+            [attr.points]="getStatisticPolylinePoints()"
+          />
+        </svg>
+      </div>
+
+      <div class="graph">
+        <span *ngFor="let stat of statistics2025">{{ stat.month }}</span>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="modal" *ngIf="selectedPatient">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>MEDICAL DETAIL</h3>
+      <span class="close" (click)="closeModal()">✕</span>
+    </div>
+    <div class="modal-body">
+      <div class="modal-column">
+        <strong>Past medical history:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.medicalHistory">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="modal-column">
+        <strong>Allergies:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.allergies">{{ item }}</li>
+        </ul>
+      </div>
+      <div class="modal-column">
+        <strong>Treatment:</strong>
+        <ul>
+          <li *ngFor="let item of selectedPatient.surgeries">{{ item }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedPrescription">
+  <div class="modal-content vertical">
+    <div class="modal-header">
+      <h3>PRESCRIPTION DETAILS</h3>
+      <span class="close" (click)="closePrescriptionModal()">✕</span>
+    </div>
+    <div class="modal-body-vertical">
+      <div *ngFor="let med of selectedPrescription">
+        <p><strong>Medicine:</strong> {{ med.name }}</p>
+        <p><strong>Dosage:</strong> {{ med.dosage }}</p>
+        <p><strong>Instructions:</strong> {{ med.instructions }}</p>
+        <hr />
+      </div>
+
+      <div class="prescription-note">
+        <strong>Note:</strong>
+        <p>{{ selectedPrescriptionNote }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedCheckups">
+  <div class="modal-content vertical">
+    <div class="modal-header">
+      <h3>CHECK-UP HISTORY</h3>
+      <span class="close" (click)="closeCheckupsModal()">✕</span>
+    </div>
+    <div class="modal-body-vertical">
+      <ul>
+        <li *ngFor="let date of selectedCheckups">{{ date }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
