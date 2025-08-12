@@ -79,7 +79,7 @@ input[type="password"] {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  width: 200%; 
+  width: 200%;
 }
 
 .options label {
@@ -105,4 +105,53 @@ button {
 
 button:hover {
   background-color: #0a2765;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #888;
+  margin: 20px 0;
+  width: 207%;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.divider:not(:empty)::before {
+  margin-right: .75em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .75em;
+}
+
+.btn-google {
+  width: 207%;
+  background-color: white;
+  color: #444;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-google img {
+  width: 20px;
+  height: 20px;
+}
+
+.btn-google:hover {
+  background-color: #f7f7f7;
 }

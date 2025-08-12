@@ -10,10 +10,22 @@
 
     <form>
       <label for="email">Email</label>
-      <input type="email" id="email" placeholder="healme@example.com" [(ngModel)]="email" name="email" />
+      <input
+        type="email"
+        id="email"
+        placeholder="healme@example.com"
+        [(ngModel)]="email"
+        name="email"
+      />
 
       <label for="password">Password</label>
-      <input type="password" id="password" placeholder="***********" [(ngModel)]="password" name="password" />
+      <input
+        type="password"
+        id="password"
+        placeholder="***********"
+        [(ngModel)]="password"
+        name="password"
+      />
 
       <div class="options">
         <label>
@@ -23,7 +35,16 @@
         <a href="#">Forgot Password?</a>
       </div>
 
-      <button type="button" (click)="login()">Login</button>
+      <button type="button" class="btn-login" (click)="login()">Login</button>
+
+      <div class="divider">
+        <span>or</span>
+      </div>
+
+      <button type="button" class="btn-google" (click)="loginWithGoogle()">
+        <img src="assets/google-logo.png" alt="Google Logo" />
+        Continue with Google
+      </button>
     </form>
   </div>
 </div>

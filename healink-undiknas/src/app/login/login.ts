@@ -30,4 +30,9 @@ export class Login {
       alert('Please enter both email and password.');
     }
   }
+
+  loginWithGoogle() {
+    console.log("Login dengan Google diklik");
+    alert('Login dengan Google berhasil (simulasi)');
+  }
 }
