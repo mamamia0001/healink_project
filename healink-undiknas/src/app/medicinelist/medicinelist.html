@@ -1,0 +1,57 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/pharmacydashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/medicinelist" routerLinkActive="active">Medicine List</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLink="/login">Log Out</button>
+  </aside>
+
+  <main class="main-content">
+    <header>
+      <div>
+        <h2>Welcome, Dr. Giovanni</h2>
+        <p>welcome back to <strong>HEALINK</strong>’s system</p>
+      </div>
+    </header>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="header">
+      <div>
+        <h2>Welcome, <span class="highlight">Sherla</span></h2>
+        <p>welcome back to <span class="highlight">HEALINK</span>’s system</p>
+      </div>
+      <div class="date-status">
+        <div class="date">9 december 2025</div>
+        <div class="status">STATUS: <span>Pharmacy</span></div>
+      </div>
+    </div>
+
+    <div class="medicine-grid">
+      <div class="medicine-card" *ngFor="let medicine of medicines">
+        <p><strong>Medicine:</strong> {{ medicine.name }}</p>
+        <p><strong>Stock:</strong> {{ medicine.stock }}</p>
+        <p><strong>Price:</strong> IDR {{ medicine.price | number }}</p>
+        <p><strong>Expired date:</strong> {{ medicine.expired }}</p>
+        <span class="edit-icon">✏️</span>
+      </div>
+    </div>
+  </main>
+</div>

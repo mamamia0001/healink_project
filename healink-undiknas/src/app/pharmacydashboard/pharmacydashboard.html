@@ -5,10 +5,10 @@
     <nav>
       <ul>
         <li>
-          <a routerLink="/staffdashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+          <a routerLink="/pharmacydashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
         </li>
         <li>
-          <a routerLink="/patientregistrasi" routerLinkActive="active">Patient Registrasi</a>
+          <a routerLink="/medicallist" routerLinkActive="active">Medical List</a>
         </li>
         <br />
         <li>
@@ -25,33 +25,32 @@
   <main class="main-content">
     <header class="dashboard-header">
       <div class="welcome-text">
-        <h2>Welcome, Stella</h2>
+        <h2>Welcome, Putri</h2>
         <p>welcome back to <strong>HEALINK</strong>’s system</p>
       </div>
       <div class="staff-status">
-        <span class="status-text">STATUS:<br><strong>Staff</strong></span>
+        <span class="status-text">STATUS:<br><strong>Pharmacy</strong></span>
       </div>
     </header>
 
     <section class="patient-container">
 
       <div class="patient-section">
-        <h4>Patient today</h4>
+        <h4>Recent Prescriptions</h4>
         <div class="patient-list">
-          <div class="patient-card" *ngFor="let patient of patients">
-            <p><strong>ID</strong> : {{ patient.id }}</p>
-            <p><strong>NAME</strong> : {{ patient.name }}</p>
-            <p><strong>AGE</strong> : {{ patient.age }}</p>
-            <p><strong>ADDRESS</strong> : {{ patient.address }}</p>
-            <p><strong>PHONE NUMBER</strong> : {{ patient.phonenumber }}</p>
+          <div class="patient-card" *ngFor="let prescription of prescriptions">
+            <p><strong>NAME</strong> : {{ prescription.name }}</p>
+            <p><strong>Division</strong> : {{ prescription.age }}</p>
+            <p><strong>ADDRESS</strong> : {{ prescription.address }}</p>
+            <p><strong>PHONE NUMBER</strong> : {{ prescription.phonenumber }}</p>
           </div>
         </div>
       </div>
 
       <aside class="right-panel">
         <div class="total-patient">
-          <p>Total Patient</p>
-          <div class="total-number">{{ patients.length }}</div>
+          <p>Total Prescription</p>
+          <div class="total-number">{{ prescriptions.length }}</div>
         </div>
       </aside>
     </section>
