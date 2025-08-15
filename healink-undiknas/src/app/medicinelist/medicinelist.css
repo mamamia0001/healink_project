@@ -2,54 +2,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 }
 
 .container {
   display: flex;
   height: 100vh;
-  background-color: #f4f6fa;
+  background-color: #EAEAEA;
 }
 
-/* Sidebar */
 .sidebar {
-  width: 220px;
+  width: 200px;
   background-color: #0B2656;
   color: white;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  padding: 20px 10px;
 }
 
-.sidebar img {
-  width: 100%;
-  max-width: 150px;
-  margin: 0 auto 20px;
+.sidebar h2 {
+  margin-bottom: 40px;
 }
 
-.sidebar nav ul {
+.sidebar ul {
   list-style: none;
+  margin-bottom: auto;
 }
 
-.sidebar nav ul li {
-  margin-bottom: 10px;
-}
-
-.sidebar nav ul li a {
-  text-decoration: none;
-  color: white;
+.sidebar ul li a {
   display: block;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  color: #EAEAEA;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
-.sidebar nav ul li a.active,
-.sidebar nav ul li a:hover {
-  background-color: #1f3d7a;
+.sidebar ul li a:hover {
+  background-color: #16366f;
 }
 
 .logout {
   margin-top: auto;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .logout a {
@@ -57,7 +56,6 @@
   text-decoration: none;
 }
 
-/* Main content */
 .main-content {
   flex: 1;
   padding: 20px;
@@ -98,7 +96,6 @@
   font-weight: normal;
 }
 
-/* Medicine grid */
 .medicine-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
