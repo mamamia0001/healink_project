@@ -10,6 +10,9 @@
         <li>
           <a routerLink="/patientform" routerLinkActive="active">Patient Form</a>
         </li>
+        <li>
+          <a routerLink="/medicalrecord" routerLinkActive="active">Medical Record</a>
+        </li>
         <br />
         <li>
           <a routerLink="/settings" routerLinkActive="active">Settings</a>
@@ -52,9 +55,10 @@
             <th (click)="setSort('id')">ID</th>
             <th (click)="setSort('name')">NAME</th>
             <th (click)="setSort('diagnosis')">DIAGNOSE</th>
-            <th>MEDICAL DETAIL</th>
+            <th>SYMPTOMS</th>
+            <th>TREATMENT PLAN</th>
+            <th>DATE</th>
             <th>PRESCRIPTION</th>
-            <th>CHECK-UPS</th>
           </tr>
         </thead>
         <tbody>
@@ -62,9 +66,10 @@
             <td>{{patient.id}}</td>
             <td>{{patient.name}}</td>
             <td>{{patient.diagnosis}}</td>
-            <td><a href="" (click)="openModal(patient); $event.preventDefault()">see details</a></td>
-            <td><a href="" (click)="openPrescriptionModal(patient); $event.preventDefault()">see details</a></td>
-            <td><a href="" (click)="openCheckupsModal(patient); $event.preventDefault()">see more</a></td>
+            <td><a href="" (click)="openSymptomsModal(patient); $event.preventDefault()">see details</a></td>
+            <td>{{patient.treatmentplan}}</td>
+            <td>{{patient.date}}</td>
+            <td><a href="" (click)="openPrescriptionModal(patient); $event.preventDefault()">see detail</a></td>
           </tr>
         </tbody>
       </table>
@@ -119,31 +124,16 @@
   </aside>
 </div>
 
-<div class="modal" *ngIf="selectedPatient">
-  <div class="modal-content">
+<div class="modal" *ngIf="selectedSymptoms">
+  <div class="modal-content vertical">
     <div class="modal-header">
-      <h3>MEDICAL DETAIL</h3>
-      <span class="close" (click)="closeModal()">✕</span>
+      <h3>SYMPTOMS DETAIL</h3>
+      <span class="close" (click)="closeSymptomsModal()">✕</span>
     </div>
-    <div class="modal-body">
-      <div class="modal-column">
-        <strong>Past medical history:</strong>
-        <ul>
-          <li *ngFor="let item of selectedPatient.medicalHistory">{{ item }}</li>
-        </ul>
-      </div>
-      <div class="modal-column">
-        <strong>Allergies:</strong>
-        <ul>
-          <li *ngFor="let item of selectedPatient.allergies">{{ item }}</li>
-        </ul>
-      </div>
-      <div class="modal-column">
-        <strong>Treatment:</strong>
-        <ul>
-          <li *ngFor="let item of selectedPatient.surgeries">{{ item }}</li>
-        </ul>
-      </div>
+    <div class="modal-body-vertical">
+      <ul>
+        <li *ngFor="let symptoms of selectedSymptoms">{{ symptoms }}</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -166,20 +156,6 @@
         <strong>Note:</strong>
         <p>{{ selectedPrescriptionNote }}</p>
       </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal" *ngIf="selectedCheckups">
-  <div class="modal-content vertical">
-    <div class="modal-header">
-      <h3>CHECK-UP HISTORY</h3>
-      <span class="close" (click)="closeCheckupsModal()">✕</span>
-    </div>
-    <div class="modal-body-vertical">
-      <ul>
-        <li *ngFor="let date of selectedCheckups">{{ date }}</li>
-      </ul>
     </div>
   </div>
 </div>

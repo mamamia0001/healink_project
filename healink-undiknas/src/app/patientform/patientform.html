@@ -10,6 +10,9 @@
     <li>
       <a routerLink="/patientform" routerLinkActive="active">Patient Form</a>
     </li>
+    <li>
+          <a routerLink="/medicalrecord" routerLinkActive="active">Medical Record</a>
+    </li>
     <br />
     <li>
       <a routerLink="/settings" routerLinkActive="active">Settings</a>
@@ -27,28 +30,33 @@
   <form class="patient-form">
     <h2 class="form-title">PATIENT FORM</h2>
 
+    <label for="Patientid" class="form-label">Patient ID</label>
     <input type="text" placeholder="ID" class="form-input" />
-
-    <select class="form-input">
-      <option>Registered Patient</option>
-      <option>New Patient</option>
-    </select>
-
+    
+    <label for="Symptoms" class="form-label">Symptoms</label>
+    <input type="text" placeholder="Symptoms" class="form-input" />
+    
+    <label for="Diagnose" class="form-label">Diagnose</label>
     <input type="text" placeholder="Diagnose" class="form-input" />
 
-    <h4 class="section-title">Medical Details</h4>
-    <input type="text" placeholder="Post medical History" class="form-input" />
-    <input type="text" placeholder="Allergies" class="form-input" />
-    <input type="text" placeholder="Treatment" class="form-input" />
+    <label for="treatmentPlan" class="form-label">Treatment Plan</label>
+    <select id="treatmentPlan" class="form-input">
+      <option value="">Select Treatment Plan</option>
+      <option value="medication">Medication</option>
+      <option value="surgical_procedures">Surgical Procedures</option>
+      <option value="therapy">Therapy</option>
+      <option value="lifestyle_modifications">Lifestyle Modifications</option>
+      <option value="patient_monitoring">Patient Monitoring</option>
+    </select>
+    
+    <label for="date" class="form-label">Date</label>
+    <input type="date" class="form-input" />
 
     <h4 class="section-title">Prescriptions</h4>
     <input type="text" placeholder="Medicine" class="form-input" />
     <input type="text" placeholder="Dose" class="form-input" />
     <input type="text" placeholder="Instructions" class="form-input" />
     <textarea placeholder="Write a note for your patient to healed better" class="form-input textarea"></textarea>
-
-    <h4 class="section-title">Check-ups</h4>
-    <input type="date" class="form-input" />
 
     <button type="submit" class="submit-button">SUBMIT</button>
   </form>

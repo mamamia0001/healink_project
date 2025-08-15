@@ -6,6 +6,7 @@ import { Patientform } from './patientform/patientform';
 import { Staffdashboard } from './staffdashboard/staffdashboard';
 import { Patientregistrasi } from './patientregistrasi/patientregistrasi';
 import { Medicinelist } from './medicinelist/medicinelist';
+import { Medicalrecord } from './medicalrecord/medicalrecord';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'staffdashboard', component: Staffdashboard },
   { path: 'patientregistrasi', component: Patientregistrasi },
   { path: 'medicinelist', component: Medicinelist },
+  { path: 'medicalrecord', component: Medicalrecord },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
 ];

@@ -15,70 +15,134 @@ export class Doctordashboard {
     id: string;
     name: string;
     diagnosis: string;
-    medicalHistory: string[];
-    allergies: string[];
-    surgeries: string[];
+    symptoms: string[];
+    treatmentplan: string[];
+    date: string[];
     prescription: { name: string; dosage: string; instructions: string }[];
     prescriptionNote?: string;
-    checkups: string[];
   }[] = [
-    {
-      id: '001',
-      name: 'John Doe',
-      diagnosis: 'Fraktur tulang paha',
-      medicalHistory: ['diabetes', 'hypertension'],
-      allergies: ['mushroom'],
-      surgeries: ['appendectomy'],
-      prescription: [
-        { name: 'Paracetamol', dosage: '500mg', instructions: '3x sehari setelah makan' },
-        { name: 'Amoxicillin', dosage: '250mg', instructions: '2x sehari selama 7 hari' }
-      ],
-      prescriptionNote: 'Gunakan tongkat bantu jalan, istirahat minimal 6 minggu.',
-      checkups: ['2025-01-05', '2025-02-10', '2025-04-22']
-    },
-    {
-      id: '002',
-      name: 'Sarah Smith',
-      diagnosis: 'Osteoporosis',
-      medicalHistory: ['anemia'],
-      allergies: ['penicillin'],
-      surgeries: [],
-      prescription: [
-        { name: 'Alendronate', dosage: '70mg', instructions: '1x seminggu, pagi sebelum makan' },
-        { name: 'Kalsium karbonat + Vitamin D', dosage: '500mg', instructions: '2x sehari setelah makan' }
-      ],
-      prescriptionNote: 'Perbanyak konsumsi makanan tinggi kalsium, lakukan olahraga ringan.',
-      checkups: ['2025-03-15', '2025-05-10']
-    },
-    {
-      id: '003',
-      name: 'Michael Johnson',
-      diagnosis: 'Artritis',
-      medicalHistory: ['hipertensi'],
-      allergies: ['ibuprofen'],
-      surgeries: [],
-      prescription: [
-        { name: 'Meloxicam', dosage: '15mg', instructions: '1x sehari setelah makan' },
-        { name: 'Glucosamine', dosage: '500mg', instructions: '2x sehari' }
-      ],
-      prescriptionNote: 'Hindari aktivitas berat pada sendi, lakukan terapi fisik secara rutin.',
-      checkups: ['2025-02-20', '2025-04-15', '2025-06-05']
-    },
-    {
-      id: '004',
-      name: 'Lisa Brown',
-      diagnosis: 'Skoliosis',
-      medicalHistory: ['asma'],
-      allergies: ['seafood'],
-      surgeries: [],
-      prescription: [
-        { name: 'Paracetamol', dosage: '500mg', instructions: 'Jika nyeri, maksimal 3x sehari' },
-        { name: 'Vitamin D3', dosage: '1000 IU', instructions: '1x sehari setelah makan' }
-      ],
-      prescriptionNote: 'Gunakan brace sesuai anjuran dokter dan lakukan latihan peregangan punggung.',
-      checkups: ['2025-01-12', '2025-03-08']
-    }
-  ];
+  {
+    id: '001',
+    name: 'John Doe',
+    diagnosis: 'Femur fracture',
+    symptoms: ['severe thigh pain', 'swelling', 'inability to walk'],
+    treatmentplan: ['Medication'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Paracetamol', dosage: '500mg', instructions: '3 times daily after meals' },
+      { name: 'Amoxicillin', dosage: '250mg', instructions: '2 times daily for 7 days' }
+    ],
+    prescriptionNote: 'Use walking cane and rest for at least 6 weeks.'
+  },
+  {
+    id: '002',
+    name: 'Emily Carter',
+    diagnosis: 'Clavicle fracture',
+    symptoms: ['shoulder pain', 'swelling', 'difficulty moving arm'],
+    treatmentplan: ['Surgical procedures'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Ceftriaxone', dosage: '1g', instructions: 'Once daily intravenously' }
+    ],
+    prescriptionNote: 'Wear arm sling for 4–6 weeks after surgery.'
+  },
+  {
+    id: '003',
+    name: 'Michael Smith',
+    diagnosis: 'Osteoporosis',
+    symptoms: ['bone fragility', 'back pain', 'loss of height over time'],
+    treatmentplan: ['Therapy'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Alendronate', dosage: '70mg', instructions: 'Once weekly in the morning before food' }
+    ],
+    prescriptionNote: 'Engage in weight-bearing exercises and take calcium supplements.'
+  },
+  {
+    id: '004',
+    name: 'Sophia Brown',
+    diagnosis: 'Osteoarthritis',
+    symptoms: ['joint stiffness', 'joint pain', 'reduced range of motion'],
+    treatmentplan: ['Lifestyle modifications'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Ibuprofen', dosage: '400mg', instructions: 'Twice daily after meals' }
+    ],
+    prescriptionNote: 'Maintain healthy weight and perform low-impact exercises like swimming.'
+  },
+  {
+    id: '005',
+    name: 'David Wilson',
+    diagnosis: 'Spinal disc herniation',
+    symptoms: ['lower back pain', 'leg numbness', 'tingling sensation'],
+    treatmentplan: ['Patient monitoring'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Naproxen', dosage: '500mg', instructions: 'Twice daily with meals' }
+    ],
+    prescriptionNote: 'Avoid heavy lifting and use proper posture when sitting.'
+  },
+  {
+    id: '006',
+    name: 'Olivia Johnson',
+    diagnosis: 'Rib fracture',
+    symptoms: ['chest pain when breathing', 'tenderness', 'swelling'],
+    treatmentplan: ['Medication'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Acetaminophen', dosage: '500mg', instructions: 'Every 6 hours as needed for pain' }
+    ],
+    prescriptionNote: 'Avoid strenuous activities for at least 6 weeks.'
+  },
+  {
+    id: '007',
+    name: 'William Davis',
+    diagnosis: 'Pelvic fracture',
+    symptoms: ['pelvic pain', 'difficulty walking', 'bruising around hips'],
+    treatmentplan: ['Surgical procedures'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Ketorolac', dosage: '10mg', instructions: 'Every 6 hours as needed for pain' }
+    ],
+    prescriptionNote: 'Follow physiotherapy plan after surgery for full recovery.'
+  },
+  {
+    id: '008',
+    name: 'Isabella Martinez',
+    diagnosis: 'Scoliosis',
+    symptoms: ['curved spine', 'uneven shoulders', 'back pain'],
+    treatmentplan: ['Therapy'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Physical Therapy Sessions', dosage: '-', instructions: 'Attend twice a week for 3 months' }
+    ],
+    prescriptionNote: 'Wear prescribed back brace and maintain good posture.'
+  },
+  {
+    id: '009',
+    name: 'James Anderson',
+    diagnosis: 'Carpal tunnel syndrome',
+    symptoms: ['wrist pain', 'numbness in fingers', 'hand weakness'],
+    treatmentplan: ['Lifestyle modifications'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Ibuprofen', dosage: '400mg', instructions: 'Twice daily as needed for pain' }
+    ],
+    prescriptionNote: 'Use ergonomic keyboard and take frequent breaks from typing.'
+  },
+  {
+    id: '010',
+    name: 'Mia Taylor',
+    diagnosis: 'Rheumatoid arthritis',
+    symptoms: ['joint swelling', 'morning stiffness', 'fatigue'],
+    treatmentplan: ['Patient monitoring'],
+    date: ['12/15/2025'],
+    prescription: [
+      { name: 'Methotrexate', dosage: '15mg', instructions: 'Once weekly' }
+    ],
+    prescriptionNote: 'Monitor blood tests regularly and maintain anti-inflammatory diet.'
+  }
+];
 
   searchTerm: string = '';
   sortKey: string = '';
@@ -119,15 +183,6 @@ export class Doctordashboard {
   }
 
 
-  selectedPatient: any = null;
-  openModal(patient: any) {
-    this.selectedPatient = patient;
-  }
-  closeModal() {
-    this.selectedPatient = null;
-  }
-
-
   selectedPrescription: { name: string; dosage: string; instructions: string }[] | null = null;
   selectedPrescriptionNote: string = '';
   openPrescriptionModal(patient: any) {
@@ -140,12 +195,12 @@ export class Doctordashboard {
   }
 
 
-  selectedCheckups: string[] | null = null;
-  openCheckupsModal(patient: any) {
-    this.selectedCheckups = patient.checkups || [];
+  selectedSymptoms: string[] | null = null;
+  openSymptomsModal(patient: any) {
+    this.selectedSymptoms = patient.symptoms || [];
   }
-  closeCheckupsModal() {
-    this.selectedCheckups = null;
+  closeSymptomsModal() {
+    this.selectedSymptoms = null;
   }
 
 

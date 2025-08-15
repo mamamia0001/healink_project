@@ -1,0 +1,91 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/doctordashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/patientform" routerLinkActive="active">Patient Form</a>
+        </li>
+        <li>
+          <a routerLink="/medicalrecord" routerLinkActive="active">Medical Record</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLink="/login">Log Out</button>
+  </aside>
+
+  <main class="content">
+    <h1>Medical Record</h1>
+
+    <section class="search-section">
+      <input 
+        type="text" 
+        placeholder="search..." 
+        [(ngModel)]="searchTerm"
+      />
+
+      <button (click)="searchPatient()">SEARCH</button>
+    </section>
+
+
+    <div *ngFor="let p of filteredPatients" class="patient-info">
+      <div>
+        <h2>{{ p.name }}</h2>
+        <p>
+          Age: {{ p.age }} &nbsp;
+          Blood type: {{ p.bloodType }} &nbsp;
+          Allergies: {{ p.allergies }}
+        </p>
+      </div>
+
+      <button class="visit-btn" (click)="openVisitHistory(p)">Visit History</button>
+    </div>
+  </main>
+
+  <div class="modal" *ngIf="isModalOpen && selectedPatient">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+
+      <h2>Visit History - {{ selectedPatient.name }}</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Visit No.</th>
+            <th>Date</th>
+            <th>Diagnosis</th>
+            <th>Symptoms</th>
+            <th>Treatment Plan</th>
+            <th>Prescription</th>
+          </tr>
+        </thead>
+
+        <tbody *ngIf="selectedPatient.visitHistory?.length; else noVisits">
+          <tr *ngFor="let visit of selectedPatient.visitHistory">
+            <td>{{ visit.visitNo }}</td>
+            <td>{{ visit.date }}</td>
+            <td>{{ visit.diagnosis }}</td>
+            <td>{{ visit.symptoms }}</td>
+            <td>{{ visit.treatmentPlan }}</td>
+            <td>{{ visit.prescription }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <ng-template #noVisits>
+        <p>No visit history found.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
