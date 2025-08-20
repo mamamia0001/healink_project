@@ -9,6 +9,7 @@ import { Medicinelist } from './medicinelist/medicinelist';
 import { Medicalrecord } from './medicalrecord/medicalrecord';
 import { Admin } from './admin/admin';
 import { Userregistration } from './userregistration/userregistration';
+import { Pharmacydashboard } from './pharmacydashboard/pharmacydashboard';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'medicalrecord', component: Medicalrecord },
   { path: 'admin', component: Admin },
   { path: 'userregistration', component: Userregistration  },
+  { path: 'pharmacydashboard', component: Pharmacydashboard  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
 ];

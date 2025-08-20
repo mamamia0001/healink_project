@@ -1,0 +1,48 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/pharmacydashboard" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/medicinelist" routerLinkActive="active">Medicine List</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLink="/login">Log Out</button>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div>
+        <h2>Welcome, <span class="username">{{ username }}</span></h2>
+        <p>welcome back to HEALINK’s system</p>
+      </div>
+      <div class="date-status">
+        <div class="date">{{ currentDate }}</div>
+        <div class="status">
+          STATUS: <span class="role">Pharmacy</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="prescriptions">
+      <h3>recent prescriptions</h3>
+      <div class="prescription-list">
+        <div *ngFor="let item of prescriptions" class="prescription-card">
+          <p>{{ item.patient }} | {{ item.doctor }} | <a href="#">see detail</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
