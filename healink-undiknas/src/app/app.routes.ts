@@ -7,6 +7,8 @@ import { Staffdashboard } from './staffdashboard/staffdashboard';
 import { Patientregistrasi } from './patientregistrasi/patientregistrasi';
 import { Medicinelist } from './medicinelist/medicinelist';
 import { Medicalrecord } from './medicalrecord/medicalrecord';
+import { Admin } from './admin/admin';
+import { Userregistration } from './userregistration/userregistration';
 
 export const routes: Routes = [
   { path: 'login', component: Login },
@@ -16,6 +18,8 @@ export const routes: Routes = [
   { path: 'patientregistrasi', component: Patientregistrasi },
   { path: 'medicinelist', component: Medicinelist },
   { path: 'medicalrecord', component: Medicalrecord },
+  { path: 'admin', component: Admin },
+  { path: 'userregistration', component: Userregistration  },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: 'login' }
 ];

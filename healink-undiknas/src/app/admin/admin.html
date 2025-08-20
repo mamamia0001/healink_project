@@ -1,0 +1,116 @@
+<div class="container"> 
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/userregistration" routerLinkActive="active">User Form</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLink="/login">Log Out</button>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div>
+        <h2>Welcome, <span class="username">Bunnie</span></h2>
+        <p>welcome back to <span class="highlight">HEALINK</span>’s system</p>
+      </div>
+      <div class="header-info">
+        <span class="date">9 december 2025</span>
+        <span class="status">STATUS:<br><strong>Admin</strong></span>
+      </div>
+    </header>
+
+    <section class="user-management">
+      <h2 class="page-title">User Management</h2>
+
+      <div class="tabs">
+        <button [class.active]="activeTab==='doctors'" (click)="setTab('doctors')">Doctors</button>
+        <button [class.active]="activeTab==='receptionist'" (click)="setTab('receptionist')">Receptionist</button>
+        <button [class.active]="activeTab==='pharmacy'" (click)="setTab('pharmacy')">Pharmacy</button>
+      </div>
+
+      <table class="user-table">
+        <!-- Doctors -->
+        <ng-container *ngIf="activeTab === 'doctors'; else staffTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Specialty</th>
+              <th>Active Shift</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doctor of doctors">
+              <td>
+                <img [src]="doctor.image" alt="{{doctor.name}}" class="profile-img" />
+                {{doctor.name}}
+              </td>
+              <td>{{doctor.id}}</td>
+              <td>{{doctor.specialty}}</td>
+              <td>{{doctor.shift}}</td>
+              <td>
+                <span [class.active]="doctor.status==='Active'" [class.inactive]="doctor.status==='Inactive'">
+                  {{doctor.status}}
+                </span>
+              </td>
+              <td class="actions">
+                <button class="edit"><span class="icon edit-icon">&#9998;</span></button>
+                <button class="delete"><span class="icon delete-icon">&#10006;</span></button>
+              </td>
+            </tr>
+          </tbody>
+        </ng-container>
+
+        <!-- Receptionist & Pharmacy -->
+        <ng-template #staffTable>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Active Shift</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of staffList">
+              <td>
+                <img [src]="s.image" alt="{{s.name}}" class="profile-img" />
+                {{s.name}}
+              </td>
+              <td>{{s.id}}</td>
+              <td>{{s.shift}}</td>
+              <td>
+                <span [class.active]="s.status==='Active'" [class.inactive]="s.status==='Inactive'">
+                  {{s.status}}
+                </span>
+              </td>
+              <td class="actions">
+                <!-- ✅ Ikon sudah sama seperti Doctors -->
+                <button class="edit"><span class="icon edit-icon">&#9998;</span></button>
+                <button class="delete"><span class="icon delete-icon">&#10006;</span></button>
+              </td>
+            </tr>
+          </tbody>
+        </ng-template>
+      </table>
+    </section>
+  </main>
+</div>

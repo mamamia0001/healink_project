@@ -1,0 +1,58 @@
+<div class="container">
+  <aside class="sidebar">
+    <img src="assets/healink_logo2.png" alt="Healink Logo" />
+    <br />
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/admin" routerLinkActive="active">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/userregistration" routerLinkActive="active">User Form</a>
+        </li>
+        <br />
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        </li>
+        <li>
+          <a routerLink="/help" routerLinkActive="active">Help & Support</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="logout" routerLink="/login">Log Out</button>
+  </aside>
+
+  <div class="form-container">
+    <form class="patient-form">
+      <h2 class="form-title">User Registration Form</h2>
+
+      <label for="name" class="form-label">Name</label>
+      <input type="text" placeholder="Name" class="form-input" />
+
+      <label for="Username" class="form-label">Username</label>
+      <input type="text" placeholder="Username" class="form-input" />
+
+      <label for="Password" class="form-label">Password</label>
+      <input type="password" placeholder="Password" class="form-input" />
+
+      <label for="role" class="form-label">Role</label>
+      <select id="role" class="form-input" [(ngModel)]="selectedRole" name="role">
+        <option value="">Select Role</option>
+        <option value="doctor">Doctor</option>
+        <option value="receptionist">Receptionist</option>
+        <option value="pharmacy">Pharmacy</option>
+      </select>
+
+      <!-- hanya muncul kalau role doctor -->
+      <div *ngIf="selectedRole === 'doctor'">
+        <label for="Licence" class="form-label">License</label>
+        <input type="text" placeholder="License" class="form-input" />
+
+        <label for="Speciality" class="form-label">Speciality</label>
+        <input type="text" placeholder="Speciality" class="form-input" />
+      </div>
+
+      <button type="submit" class="submit-button">SUBMIT</button>
+    </form>
+  </div>
+</div>
