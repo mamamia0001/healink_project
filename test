@@ -1,0 +1,83 @@
+📦healink-undiknas
+ ┣ 📂.vscode
+ ┃ ┣ 📜extensions.json
+ ┃ ┣ 📜launch.json
+ ┃ ┗ 📜tasks.json
+ ┣ 📂public
+ ┃ ┗ 📜favicon.ico
+ ┣ 📂src
+ ┃ ┣ 📂app
+ ┃ ┃ ┣ 📂admin
+ ┃ ┃ ┃ ┣ 📜admin.css
+ ┃ ┃ ┃ ┣ 📜admin.html
+ ┃ ┃ ┃ ┣ 📜admin.spec.ts
+ ┃ ┃ ┃ ┗ 📜admin.ts
+ ┃ ┃ ┣ 📂doctordashboard
+ ┃ ┃ ┃ ┣ 📜doctordashboard.css
+ ┃ ┃ ┃ ┣ 📜doctordashboard.html
+ ┃ ┃ ┃ ┣ 📜doctordashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜doctordashboard.ts
+ ┃ ┃ ┣ 📂login
+ ┃ ┃ ┃ ┣ 📜login.css
+ ┃ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┃ ┣ 📜login.spec.ts
+ ┃ ┃ ┃ ┗ 📜login.ts
+ ┃ ┃ ┣ 📂medicalrecord
+ ┃ ┃ ┃ ┣ 📜medicalrecord.css
+ ┃ ┃ ┃ ┣ 📜medicalrecord.html
+ ┃ ┃ ┃ ┣ 📜medicalrecord.spec.ts
+ ┃ ┃ ┃ ┗ 📜medicalrecord.ts
+ ┃ ┃ ┣ 📂medicinelist
+ ┃ ┃ ┃ ┣ 📜medicinelist.css
+ ┃ ┃ ┃ ┣ 📜medicinelist.html
+ ┃ ┃ ┃ ┣ 📜medicinelist.spec.ts
+ ┃ ┃ ┃ ┗ 📜medicinelist.ts
+ ┃ ┃ ┣ 📂patientform
+ ┃ ┃ ┃ ┣ 📜patientform.css
+ ┃ ┃ ┃ ┣ 📜patientform.html
+ ┃ ┃ ┃ ┣ 📜patientform.spec.ts
+ ┃ ┃ ┃ ┗ 📜patientform.ts
+ ┃ ┃ ┣ 📂patientregistrasi
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.css
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.html
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.spec.ts
+ ┃ ┃ ┃ ┗ 📜patientregistrasi.ts
+ ┃ ┃ ┣ 📂pharmacydashboard
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.css
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.html
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜pharmacydashboard.ts
+ ┃ ┃ ┣ 📂staffdashboard
+ ┃ ┃ ┃ ┣ 📜staffdashboard.css
+ ┃ ┃ ┃ ┣ 📜staffdashboard.html
+ ┃ ┃ ┃ ┣ 📜staffdashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜staffdashboard.ts
+ ┃ ┃ ┣ 📂userregistration
+ ┃ ┃ ┃ ┣ 📜userregistration.css
+ ┃ ┃ ┃ ┣ 📜userregistration.html
+ ┃ ┃ ┃ ┣ 📜userregistration.spec.ts
+ ┃ ┃ ┃ ┗ 📜userregistration.ts
+ ┃ ┃ ┣ 📜app.config.ts
+ ┃ ┃ ┣ 📜app.css
+ ┃ ┃ ┣ 📜app.html
+ ┃ ┃ ┣ 📜app.routes.ts
+ ┃ ┃ ┣ 📜app.spec.ts
+ ┃ ┃ ┗ 📜app.ts
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📜doctor-illustration.png
+ ┃ ┃ ┣ 📜google-logo.png
+ ┃ ┃ ┣ 📜healink_logo.png
+ ┃ ┃ ┗ 📜healink_logo2.png
+ ┃ ┣ 📜custom-theme.scss
+ ┃ ┣ 📜index.html
+ ┃ ┣ 📜main.ts
+ ┃ ┗ 📜styles.css
+ ┣ 📜.editorconfig
+ ┣ 📜.gitignore
+ ┣ 📜angular.json
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┣ 📜README.md
+ ┣ 📜tsconfig.app.json
+ ┣ 📜tsconfig.json
+ ┗ 📜tsconfig.spec.json
