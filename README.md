@@ -29,65 +29,89 @@ Project ini berfokus pada pengelolaan rekam medis, registrasi pasien, daftar oba
 
 ## 📂 Struktur Folder
 
-healink-undiknas/
-├── .vscode/
-├── public/
-├── src/
-│   ├── app/
-│   │   ├── admin/
-│   │   ├── doctordashboard/
-│   │   ├── login/
-│   │   ├── medicalrecord/
-│   │   ├── medicinelist/
-│   │   ├── patientform/
-│   │   ├── patientregistrasi/
-│   │   ├── pharmacydashboard/
-│   │   ├── staffdashboard/
-│   │   └── userregistration/
-│   │   ├── app.config.ts
-│   │   ├── app.css
-│   │   ├── app.html
-│   │   ├── app.routes.ts
-│   │   ├── app.spec.ts
-│   │   └── app.ts
-│   ├── assets/
-│   ├── custom-theme.scss
-│   ├── index.html
-│   ├── main.ts
-│   └── styles.css
-├── .editorconfig
-├── .gitignore
-├── angular.json
-├── package-lock.json
-└── package.json
-
-healink-undiknas/
-├── src/
-│ ├── app/
-│ │ ├── admin/ # Modul untuk Admin
-│ │ ├── doctordashboard/ # Modul dashboard Dokter
-│ │ ├── login/ # Modul login
-│ │ ├── medicalrecord/ # Modul rekam medis
-│ │ ├── medicinelist/ # Modul daftar obat
-│ │ ├── patientform/ # Modul form pasien
-│ │ ├── patientregistrasi/ # Modul registrasi pasien
-│ │ ├── pharmacydashboard/ # Modul dashboard Apotek
-│ │ ├── staffdashboard/ # Modul dashboard Staff
-│ │ ├── userregistration/ # Modul registrasi user
-│ │ ├── app.config.ts # Konfigurasi aplikasi
-│ │ ├── app.routes.ts # Routing aplikasi
-│ │ ├── app.ts # Root module aplikasi
-│ │ ├── app.spec.ts # Unit test
-│ │ ├── app.html # Template utama
-│ │ └── app.css # Style global untuk app
-│ ├── assets/ # Aset gambar, icon, dll
-│ ├── index.html # File utama Angular
-│ ├── main.ts # Entry point aplikasi
-│ └── styles.css # Style global tambahan
-├── angular.json # Konfigurasi Angular CLI
-├── package.json # Dependency project
-├── package-lock.json # Lock file dependency
-└── README.md # Dokumentasi proyek
+📦healink-undiknas
+ ┣ 📂.vscode
+ ┃ ┣ 📜extensions.json
+ ┃ ┣ 📜launch.json
+ ┃ ┗ 📜tasks.json
+ ┣ 📂public
+ ┃ ┗ 📜favicon.ico
+ ┣ 📂src
+ ┃ ┣ 📂app
+ ┃ ┃ ┣ 📂admin
+ ┃ ┃ ┃ ┣ 📜admin.css
+ ┃ ┃ ┃ ┣ 📜admin.html
+ ┃ ┃ ┃ ┣ 📜admin.spec.ts
+ ┃ ┃ ┃ ┗ 📜admin.ts
+ ┃ ┃ ┣ 📂doctordashboard
+ ┃ ┃ ┃ ┣ 📜doctordashboard.css
+ ┃ ┃ ┃ ┣ 📜doctordashboard.html
+ ┃ ┃ ┃ ┣ 📜doctordashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜doctordashboard.ts
+ ┃ ┃ ┣ 📂login
+ ┃ ┃ ┃ ┣ 📜login.css
+ ┃ ┃ ┃ ┣ 📜login.html
+ ┃ ┃ ┃ ┣ 📜login.spec.ts
+ ┃ ┃ ┃ ┗ 📜login.ts
+ ┃ ┃ ┣ 📂medicalrecord
+ ┃ ┃ ┃ ┣ 📜medicalrecord.css
+ ┃ ┃ ┃ ┣ 📜medicalrecord.html
+ ┃ ┃ ┃ ┣ 📜medicalrecord.spec.ts
+ ┃ ┃ ┃ ┗ 📜medicalrecord.ts
+ ┃ ┃ ┣ 📂medicinelist
+ ┃ ┃ ┃ ┣ 📜medicinelist.css
+ ┃ ┃ ┃ ┣ 📜medicinelist.html
+ ┃ ┃ ┃ ┣ 📜medicinelist.spec.ts
+ ┃ ┃ ┃ ┗ 📜medicinelist.ts
+ ┃ ┃ ┣ 📂patientform
+ ┃ ┃ ┃ ┣ 📜patientform.css
+ ┃ ┃ ┃ ┣ 📜patientform.html
+ ┃ ┃ ┃ ┣ 📜patientform.spec.ts
+ ┃ ┃ ┃ ┗ 📜patientform.ts
+ ┃ ┃ ┣ 📂patientregistrasi
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.css
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.html
+ ┃ ┃ ┃ ┣ 📜patientregistrasi.spec.ts
+ ┃ ┃ ┃ ┗ 📜patientregistrasi.ts
+ ┃ ┃ ┣ 📂pharmacydashboard
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.css
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.html
+ ┃ ┃ ┃ ┣ 📜pharmacydashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜pharmacydashboard.ts
+ ┃ ┃ ┣ 📂staffdashboard
+ ┃ ┃ ┃ ┣ 📜staffdashboard.css
+ ┃ ┃ ┃ ┣ 📜staffdashboard.html
+ ┃ ┃ ┃ ┣ 📜staffdashboard.spec.ts
+ ┃ ┃ ┃ ┗ 📜staffdashboard.ts
+ ┃ ┃ ┣ 📂userregistration
+ ┃ ┃ ┃ ┣ 📜userregistration.css
+ ┃ ┃ ┃ ┣ 📜userregistration.html
+ ┃ ┃ ┃ ┣ 📜userregistration.spec.ts
+ ┃ ┃ ┃ ┗ 📜userregistration.ts
+ ┃ ┃ ┣ 📜app.config.ts
+ ┃ ┃ ┣ 📜app.css
+ ┃ ┃ ┣ 📜app.html
+ ┃ ┃ ┣ 📜app.routes.ts
+ ┃ ┃ ┣ 📜app.spec.ts
+ ┃ ┃ ┗ 📜app.ts
+ ┃ ┣ 📂assets
+ ┃ ┃ ┣ 📜doctor-illustration.png
+ ┃ ┃ ┣ 📜google-logo.png
+ ┃ ┃ ┣ 📜healink_logo.png
+ ┃ ┃ ┗ 📜healink_logo2.png
+ ┃ ┣ 📜custom-theme.scss
+ ┃ ┣ 📜index.html
+ ┃ ┣ 📜main.ts
+ ┃ ┗ 📜styles.css
+ ┣ 📜.editorconfig
+ ┣ 📜.gitignore
+ ┣ 📜angular.json
+ ┣ 📜package-lock.json
+ ┣ 📜package.json
+ ┣ 📜README.md
+ ┣ 📜tsconfig.app.json
+ ┣ 📜tsconfig.json
+ ┗ 📜tsconfig.spec.json
 
 ---
 
