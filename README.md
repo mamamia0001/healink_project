@@ -28,6 +28,39 @@ Project ini berfokus pada pengelolaan rekam medis, registrasi pasien, daftar oba
 ---
 
 ## 📂 Struktur Folder
+
+healink-undiknas/
+├── .vscode/
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── admin/
+│   │   ├── doctordashboard/
+│   │   ├── login/
+│   │   ├── medicalrecord/
+│   │   ├── medicinelist/
+│   │   ├── patientform/
+│   │   ├── patientregistrasi/
+│   │   ├── pharmacydashboard/
+│   │   ├── staffdashboard/
+│   │   └── userregistration/
+│   │   ├── app.config.ts
+│   │   ├── app.css
+│   │   ├── app.html
+│   │   ├── app.routes.ts
+│   │   ├── app.spec.ts
+│   │   └── app.ts
+│   ├── assets/
+│   ├── custom-theme.scss
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── .editorconfig
+├── .gitignore
+├── angular.json
+├── package-lock.json
+└── package.json
+
 healink-undiknas/
 ├── src/
 │ ├── app/
